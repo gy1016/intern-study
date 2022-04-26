@@ -1,0 +1,83 @@
+.infinite-scroll {
+  height: 100%;
+  overflow: auto;
+  background-color: #e5e5e5;
+}
+
+.infinite-scroll-card {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #fff;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-headr {
+    @include overflow-ellipsis();
+
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .card-container {
+    @include overflow-ellipsis();
+
+    font-size: 1.5rem;
+  }
+
+  .card-pic-container {
+    @include overflow-ellipsis();
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      @include overflow-ellipsis();
+
+      position: absolute;
+      top: 30%;
+      margin: 0;
+      color: #fff;
+    }
+
+    img {
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    button {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: rgb(44 135 216);
+      border: none;
+      border-radius: 0.5rem;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 8px 16px 0 rgba(0 0 0 / 20%), 0 6px 20px 0 rgba(0 0 0 / 19%);
+    }
+  }
+
+  .btn-animation {
+    button {
+      transform-origin: bottom center;
+      animation: 60s linear btn-animation infinite;
+    }
+  }
+}
+
+@keyframes btn-animation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
